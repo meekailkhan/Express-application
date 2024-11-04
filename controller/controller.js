@@ -1,5 +1,5 @@
-const pDb = require('../db');
-const query = require('./query')
+import pDb from '../database/db.js';
+import query from '../query/query.js'
 
 const getEmploye = async (req, res) => {
     try {
@@ -70,7 +70,7 @@ const updateEmploye = async (req,res)=>{
 }
 
 
-module.exports = {
+export  default {
     getEmploye,
     getEmployeById,
     addEmploye,

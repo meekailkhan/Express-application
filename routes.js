@@ -1,6 +1,6 @@
-const  Router = require('express');
+import Router from 'express';
+import contro from './controller/controller.js'
 const router = Router();
-const contro = require('./controller')
 
 router.get("/",contro.getEmploye)
 router.post("/",contro.addEmploye)
@@ -9,4 +9,4 @@ router.put("/:id",contro.updateEmploye)
 router.get("/:id",contro.getEmployeById)
 
 
-module.exports = router
+export default router

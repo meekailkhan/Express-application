@@ -1,9 +1,13 @@
-require("dotenv").config();
-const express = require("express");
-const employeRouter = require('./src/student/routes')
+import dotenv from 'dotenv';
+dotenv.config();
+
+
+console.log(process.env.PASSWORD)
+import express from 'express'
+import employeRouter from './routes.js'
 
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
 app.use(express.json())
 
@@ -19,4 +23,4 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/student", employeRouter);
 
-app.listen(port, () => console.log(`the listen port ${port}`)) 
+app.listen(PORT, () => console.log(`the listen port ${PORT}`)) 
