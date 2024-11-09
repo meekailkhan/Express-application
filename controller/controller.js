@@ -21,7 +21,7 @@ const getEmployeById = async (req,res)=>{
 
 }
 
-
+let id = 25;
 const addEmploye = async (req,res)=>{
     const {emp_name,email,city,salary} = req.body;
     try{
@@ -29,8 +29,9 @@ const addEmploye = async (req,res)=>{
         if(emailExist.length > 0){
             res.status(400).send("email is already exist")
         }else{
+            id++
             await pDb.any(query.addEmploye,[emp_name,email,city,salary]);
-            res.status(201).send("student add successfully")
+            res.status(201).send(`student add successfully with ID ${id}`)
         }
 
     }catch(err){
