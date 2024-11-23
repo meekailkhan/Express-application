@@ -1,8 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
-
-console.log(process.env.PASSWORD)
 import express from 'express'
 import employeRouter from './routes.js'
 
